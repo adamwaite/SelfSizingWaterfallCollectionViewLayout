@@ -1,6 +1,6 @@
 # SelfSizingWaterfallCollectionViewLayout
 
-SelfSizingWaterfallCollectionViewLayout is a UICollectionViewLayout subclass that organizes items of dynamic height into a grid of variable columnns. Items flow from one row or column to the next, with each item being placed beneath the shortest column in the section (as if you're winning at Tetris upside-down). It supports multiple sections, headers and footers. It's designed to be used alongside AutoLayout and self-sizing cell technologies introduced in iOS8.
+SelfSizingWaterfallCollectionViewLayout is a UICollectionViewLayout subclass that organizes items of dynamic height into a grid of variable columns. Items flow from one row or column to the next, with each item being placed beneath the shortest column in the section (as if you're winning at Tetris upside-down). It supports multiple sections, headers and footers. It's designed to be used alongside AutoLayout and self-sizing cell technologies introduced in iOS8.
 
 ![demo-vid](resources/demo.mp4.gif)
 
