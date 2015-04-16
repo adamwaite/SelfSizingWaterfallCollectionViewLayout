@@ -17,7 +17,7 @@ DESC
   s.social_media_url = "http://twitter.com/AdamWaite"
 
   s.platform     = :ios
-  s.platform     = :ios, '6.0'
+  s.platform     = :ios, '8.0'
 
   s.source       = { :git => "https://github.com/adamwaite/SelfSizingWaterfallCollectionViewLayout.git", :tag => "v0.0.1" }
   s.source_files  = 'SelfSizingWaterfallCollectionViewLayout', 'SelfSizingWaterfallCollectionViewLayout/**/*.{h,m}'
