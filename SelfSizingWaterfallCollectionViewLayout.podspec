@@ -9,7 +9,7 @@ SelfSizingWaterfallCollectionViewLayout is a UICollectionViewLayout subclass tha
 
 DESC
 
-  s.homepage     = "https://github.com/adamwaite/AJWValidator"
+  s.homepage     = "https://github.com/adamwaite/SelfSizingWaterfallCollectionViewLayout"
 
   s.license      = { :type => 'MIT', :file => 'LICENSE' }
 
@@ -19,9 +19,9 @@ DESC
   s.platform     = :ios
   s.platform     = :ios, '6.0'
 
-  s.source       = { :git => "https://github.com/adamwaite/AJWValidator.git", :tag => "v0.0.7" }
-  s.source_files  = 'AJWValidator', 'AJWValidator/**/*.{h,m}'
-  s.public_header_files = 'AJWValidator/AJWValidator.h', 'AJWValidator/UIView+AJWValidator.h'
+  s.source       = { :git => "https://github.com/adamwaite/SelfSizingWaterfallCollectionViewLayout.git", :tag => "v0.0.1" }
+  s.source_files  = 'SelfSizingWaterfallCollectionViewLayout', 'SelfSizingWaterfallCollectionViewLayout/**/*.{h,m}'
+  s.public_header_files = 'SelfSizingWaterfallCollectionViewLayout/SelfSizingWaterfallCollectionViewLayout.h'
 
   s.requires_arc = true
 
