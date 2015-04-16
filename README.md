@@ -4,6 +4,10 @@ SelfSizingWaterfallCollectionViewLayout is a UICollectionViewLayout subclass tha
 
 ![demo-vid](resources/demo.mp4.gif)
 
+## Integration
+
+`pod 'SelfSizingWaterfallCollectionViewLayout'`
+
 ## Usage
 
 I plan to write this soon.
