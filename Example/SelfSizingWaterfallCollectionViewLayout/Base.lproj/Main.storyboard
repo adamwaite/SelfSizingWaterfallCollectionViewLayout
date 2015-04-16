@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="14A343f" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="OOg-mg-UrY">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--Self Sizing Waterfall Layout-->
+        <scene sceneID="ufC-wZ-h7g">
+            <objects>
+                <viewController id="vXZ-lx-hvc" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
+                        <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="6gk-nr-jU5">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" red="0.89718514680000006" green="0.89735752339999997" blue="0.89715635780000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <collectionViewLayout key="collectionViewLayout" id="xQQ-wD-l4R" customClass="SelfSizingWaterfallCollectionViewLayout"/>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="WordCell" id="gSX-Xa-4YC" customClass="WordCollectionViewCell">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="196" height="159"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vnj-fh-M8P">
+                                                    <rect key="frame" x="8" y="8" width="43" height="22"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="18"/>
+                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstItem="vnj-fh-M8P" firstAttribute="top" secondItem="gSX-Xa-4YC" secondAttribute="topMargin" id="S40-Vb-bJQ"/>
+                                            <constraint firstItem="vnj-fh-M8P" firstAttribute="leading" secondItem="gSX-Xa-4YC" secondAttribute="leadingMargin" id="ZhL-Yu-Gnx"/>
+                                        </constraints>
+                                        <size key="customSize" width="196" height="159"/>
+                                        <connections>
+                                            <outlet property="label" destination="vnj-fh-M8P" id="4Pg-ei-5f7"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="vXZ-lx-hvc" id="Jm3-9K-iF1"/>
+                                    <outlet property="delegate" destination="vXZ-lx-hvc" id="KjN-UJ-Uhp"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="6gk-nr-jU5" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="O7T-OG-fx0"/>
+                            <constraint firstItem="6gk-nr-jU5" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" id="ZKG-LX-XyC"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="6gk-nr-jU5" secondAttribute="bottom" id="woC-tR-Kj8"/>
+                            <constraint firstAttribute="trailing" secondItem="6gk-nr-jU5" secondAttribute="trailing" id="xtz-In-8fP"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Self Sizing Waterfall Layout" id="IVP-90-lxg">
+                        <barButtonItem key="rightBarButtonItem" title="Refresh" id="7Rw-5h-xTG">
+                            <color key="tintColor" red="0.66234552859999996" green="0.1020920798" blue="0.19688543680000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <action selector="refresh:" destination="vXZ-lx-hvc" id="PWy-Zp-c2z"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="collectionView" destination="6gk-nr-jU5" id="fBd-JN-wc2"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1333" y="284"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Qxo-6S-RCy">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" hidesBarsOnSwipe="YES" hidesBarsOnTap="YES" id="OOg-mg-UrY" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="7c9-2J-DDc">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="vXZ-lx-hvc" kind="relationship" relationship="rootViewController" id="YMK-nf-4lw"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="je3-69-odM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="619" y="284"/>
+        </scene>
+    </scenes>
+</document>

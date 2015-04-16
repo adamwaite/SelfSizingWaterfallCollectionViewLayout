@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>1B206C8A-D3E3-4A6B-9050-491DCECAE054</string>
+	<key>IDESourceControlProjectName</key>
+	<string>SelfSizingWaterfallCollectionViewLayout</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>D194E37947FAD1346F6207483277B2FDAC416328</key>
+		<string>bitbucket.org:adam_waite/adamjwaite-pods.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>SelfSizingWaterfallCollectionViewLayout/Example/SelfSizingWaterfallCollectionViewLayout.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>D194E37947FAD1346F6207483277B2FDAC416328</key>
+		<string>../../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>bitbucket.org:adam_waite/adamjwaite-pods.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>D194E37947FAD1346F6207483277B2FDAC416328</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>D194E37947FAD1346F6207483277B2FDAC416328</string>
+			<key>IDESourceControlWCCName</key>
+			<string>AdamJWaite-Pods</string>
+		</dict>
+	</array>
+</dict>
+</plist>
