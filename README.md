@@ -1,6 +1,6 @@
 # SelfSizingWaterfallCollectionViewLayout
 
-SelfSizingWaterfallCollectionViewLayout is a UICollectionViewLayout subclass that organizes items of dynamic height into a grid of variable columns. Items flow from one row or column to the next, with each item being placed beneath the shortest column in the section (as if you're winning at Tetris upside-down). It supports multiple sections, headers and footers. It's designed to be used alongside AutoLayout and self-sizing cell technologies introduced in iOS8.
+SelfSizingWaterfallCollectionViewLayout is a UICollectionViewLayout subclass that organises items of dynamic height into a grid of variable columns. Items flow from one row or column to the next, with each item being placed beneath the shortest column in the section (as if you're winning at Tetris upside-down). It supports multiple sections, headers and footers. It's designed to be used alongside AutoLayout and self-sizing cell technologies introduced in iOS8.
 
 ![demo-vid](resources/demo.mp4.gif)
 
@@ -10,33 +10,47 @@ SelfSizingWaterfallCollectionViewLayout is a UICollectionViewLayout subclass tha
 
 ## API
 
-The API has been designed to replicate `UICollectionViewDelegateFlowLayout` so it should be familiar and relatively straight forward to use. There are a few additions to support variable columns and waterfall design.
+The API has been designed to replicate `UICollectionViewFlowLayout` so it should be familiar. There are a few additions to support variable columns and waterfall design.
 
 ### Properties
+
+**Section insets**
 
 `@property (nonatomic) UIEdgeInsets sectionInset;`
 
 The margins used to lay out content in a section. Default: UIEdgeInsetsZero.
 
+**Number of columns**
+
 `@property (nonatomic) NSUInteger numberOfColumns;`
 
 The number of columns in the layout. Default: 2. Use the `SelfSizingWaterfallCollectionViewLayoutDelegate` delegate method to specify a different variable number of columns between sections.
+
+**Inter-item spacing**
 
 `@property (nonatomic) CGFloat minimumInteritemSpacing;`
 
 The minimum spacing to use between items in the same row. Default: 8.0f;
 
+**Line spacing**
+
 `@property (nonatomic) CGFloat minimumLineSpacing;`
 
 The minimum spacing to use between lines of items in the layout. Default: 8.0f;
+
+**Header size**
 
 `@property (nonatomic) CGSize headerReferenceSize;`
 
 The size for collection view headers. Default: CGSizeZero;
 
+**Footer size**
+
 `@property (nonatomic) CGSize footerReferenceSize;`
 
 The size for collection view footers. Default: CGSizeZero;
+
+**Estimated item height**
 
 `@property (nonatomic) CGFloat estimatedItemHeight;`
 
@@ -48,30 +62,44 @@ An object conforming to `SelfSizingWaterfallCollectionViewLayoutDelegate` may pr
  
 The self sizing waterfall layout object expects the collection view’s delegate object to adopt this protocol (as with `UICollectionViewDelegateFlowLayout`).
 
+**Section insets**
+
 `- (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section;
 `
 
 Asks the delegate for the margins to apply to content in the specified section.
 
+**Number of columns in section**
+
 `- (NSUInteger)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout numberOfColumnsInSection:(NSUInteger)section;`
 
 Asks the delegate how many columns a section should contain.
+
+**Inter-item spacing**
 
 ` - (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout minimumInteritemSpacingForSectionAtIndex:(NSInteger)section;`
 
 Asks the delegate for the horizontal spacing between columns.
 
+**Line spacing**
+
 ` - (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout minimumLineSpacingForSectionAtIndex:(NSInteger)section;`
 
 Asks the delegate for the vertical spacing between successive items in a column of a section.
+
+**Header size**
 
 ` - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout referenceSizeForHeaderInSection:(NSUInteger)section;`
 
 Asks the delegate for the size of the header view in the specified section.
 
+**Footer size**
+
 ` - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout referenceSizeForFooterInSection:(NSUInteger)section;`
 
 Asks the delegate for the size of the footer view in the specified section.
+
+**Estimated item height**
 
 ` - (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout estimatedHeightForItemAtIndexPath:(NSIndexPath *)indexPath;`
 
