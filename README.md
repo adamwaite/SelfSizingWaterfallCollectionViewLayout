@@ -8,11 +8,74 @@ SelfSizingWaterfallCollectionViewLayout is a UICollectionViewLayout subclass tha
 
 `pod 'SelfSizingWaterfallCollectionViewLayout'`
 
-## Usage
+## API
 
-I plan to write this soon.
+The API has been designed to replicate `UICollectionViewDelegateFlowLayout` so it should be familiar and relatively straight forward to use. There are a few additions to support variable columns and waterfall design.
 
-The API is similar to `UICollectionViewFlowLayout` and there's an example in this repository, if you want to give it a go on your own.
+### Properties
+
+`@property (nonatomic) UIEdgeInsets sectionInset;`
+
+The margins used to lay out content in a section. Default: UIEdgeInsetsZero.
+
+`@property (nonatomic) NSUInteger numberOfColumns;`
+
+The number of columns in the layout. Default: 2. Use the `SelfSizingWaterfallCollectionViewLayoutDelegate` delegate method to specify a different variable number of columns between sections.
+
+`@property (nonatomic) CGFloat minimumInteritemSpacing;`
+
+The minimum spacing to use between items in the same row. Default: 8.0f;
+
+`@property (nonatomic) CGFloat minimumLineSpacing;`
+
+The minimum spacing to use between lines of items in the layout. Default: 8.0f;
+
+`@property (nonatomic) CGSize headerReferenceSize;`
+
+The size for collection view headers. Default: CGSizeZero;
+
+`@property (nonatomic) CGSize footerReferenceSize;`
+
+The size for collection view footers. Default: CGSizeZero;
+
+`@property (nonatomic) CGFloat estimatedItemHeight;`
+
+An estimate for an item’s height for use in a preliminary layout. A value returned by `preferredLayoutAttributesFittingAttributes:` in a UICollectionViewCell will take precedence over this value.
+
+### SelfSizingWaterfallCollectionViewLayoutDelegate <UICollectionViewDelegate>
+
+An object conforming to `SelfSizingWaterfallCollectionViewLayoutDelegate` may provide layout information for a `SelfSizingWaterfallCollectionViewLayout` instance. All of the methods in this protocol are optional. If you do not implement a particular method, the layout will fall back to use values in its own properties for the appropriate layout information.
+ 
+The self sizing waterfall layout object expects the collection view’s delegate object to adopt this protocol (as with `UICollectionViewDelegateFlowLayout`).
+
+`- (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section;
+`
+
+Asks the delegate for the margins to apply to content in the specified section.
+
+`- (NSUInteger)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout numberOfColumnsInSection:(NSUInteger)section;`
+
+Asks the delegate how many columns a section should contain.
+
+` - (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout minimumInteritemSpacingForSectionAtIndex:(NSInteger)section;`
+
+Asks the delegate for the horizontal spacing between columns.
+
+` - (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout minimumLineSpacingForSectionAtIndex:(NSInteger)section;`
+
+Asks the delegate for the vertical spacing between successive items in a column of a section.
+
+` - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout referenceSizeForHeaderInSection:(NSUInteger)section;`
+
+Asks the delegate for the size of the header view in the specified section.
+
+` - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout referenceSizeForFooterInSection:(NSUInteger)section;`
+
+Asks the delegate for the size of the footer view in the specified section.
+
+` - (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout estimatedHeightForItemAtIndexPath:(NSIndexPath *)indexPath;`
+
+Asks the delegate for an estimate of the height of the specified item’s cell for a preliminary layout pass.
 
 ## Contact
 
